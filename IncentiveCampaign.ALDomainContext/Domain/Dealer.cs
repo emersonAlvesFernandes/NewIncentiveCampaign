@@ -5,10 +5,22 @@ using IncentiveCampaign.ALDomainContext.Contracts.GenericEntity;
 
 namespace IncentiveCampaign.ALDomainContext.Domain
 {
-    public class Dealer : IEntity
+    public class Dealer : Entity
     {
-        public bool HasAcceptedTerm { get; set; }
+        public Dealer(bool hasAcceptedTerm, DateTime? termAcceptDate, long id, string name) 
+            : base(id, name)
+        {            
+            HasAcceptedTerm = hasAcceptedTerm;
+            TermAcceptDate = termAcceptDate;
+        }
 
-        public DateTime AcceptDate { get; set; }
+        public bool HasAcceptedTerm { get; private set; }
+
+        public DateTime? TermAcceptDate { get; private set; }
+
+        public override bool IsValid()
+        {            
+            return true;
+        }
     }
 }
