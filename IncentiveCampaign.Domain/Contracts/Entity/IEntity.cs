@@ -4,8 +4,18 @@ using System.Text;
 
 namespace IncentiveCampaign.Domain.Contracts
 {
-    public interface IEntity
+    public abstract class Entity
     {
-        bool IsValid();
+        protected Entity(long id, string name)
+        {
+            Id = id;
+            Name = name;
+        }
+
+        public long Id { get; protected set; }
+
+        public string Name { get; protected set; }
+
+        public abstract bool IsValid();
     }
 }

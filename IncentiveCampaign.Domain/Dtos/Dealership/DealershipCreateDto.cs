@@ -5,7 +5,7 @@ using System.Text;
 
 namespace IncentiveCampaign.Domain.Dtos.Dealership
 {
-    public class DealershipCreateDto : IEntity
+    public class DealershipCreateDto
     {
         public long Id { get; set; }
 
@@ -14,11 +14,5 @@ namespace IncentiveCampaign.Domain.Dtos.Dealership
         public string Cnpj { get; set; }
 
         public bool AgreementLetterSent { get; set; }        
-
-        public bool IsValid()
-        {
-
-            throw new NotImplementedException();
-        }
     }
 }

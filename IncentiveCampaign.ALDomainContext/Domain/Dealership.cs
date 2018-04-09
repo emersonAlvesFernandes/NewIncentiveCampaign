@@ -13,7 +13,7 @@ namespace IncentiveCampaign.ALDomainContext.Domain
             AgreementLetter = agreementLetter;
             Dealers = dealers;
         }
-
+        
         public byte[] AgreementLetter { get; private set; }
 
         public List<Dealer> Dealers { get; private set; }

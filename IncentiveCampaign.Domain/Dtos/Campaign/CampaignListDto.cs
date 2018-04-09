@@ -1,15 +1,13 @@
-﻿//using Flunt.Notifications;
-//using Flunt.Validations;
-using IncentiveCampaign.Domain.Contracts;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics.Contracts;
 using System.Text;
 
 namespace IncentiveCampaign.Domain.Dtos.Campaign
 {
-    public class CampaignCreateDto
-    {        
+    class CampaignListDto
+    {
+        public long Id { get; set; }
+
         public string Name { get; set; }
 
         public DateTime StartDate { get; set; }
@@ -22,6 +20,8 @@ namespace IncentiveCampaign.Domain.Dtos.Campaign
 
         public string UserName { get; set; }
 
-        public bool AgreementLetterRequired { get; set; }      
+        public bool AgreementLetterRequired { get; set; }
+
+        public string TermUrl { get; set; }
     }
 }

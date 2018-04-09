@@ -20,7 +20,7 @@ namespace IncentiveCampaign.ALDomainContext.Domain
             Regionals = regionals;
         }
 
-        public bool AgreementLetterRequired { get; set; }
+        public bool AgreementLetterRequired { get; private set; }
 
         public List<Regional> Regionals { get; set; }
 

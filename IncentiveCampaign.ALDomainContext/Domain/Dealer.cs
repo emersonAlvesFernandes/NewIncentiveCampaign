@@ -19,8 +19,8 @@ namespace IncentiveCampaign.ALDomainContext.Domain
         public DateTime? TermAcceptDate { get; private set; }
 
         public override bool IsValid()
-        {            
-            return true;
+        {
+            throw new NotImplementedException();
         }
     }
 }

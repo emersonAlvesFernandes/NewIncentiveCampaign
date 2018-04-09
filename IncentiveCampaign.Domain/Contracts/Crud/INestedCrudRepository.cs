@@ -4,10 +4,10 @@ using System.Text;
 
 namespace IncentiveCampaign.Domain.Contracts.Crud
 {
-    public interface INestedCrudRepository<T> where T : IEntity
+    public interface INestedCrudRepository<T> where T : Entity
     {
-        void DeleteRelationship(long baseEntityId, long childEntityId);
+        void DeleteRelationship(long baseEntityId);
 
-        void CreateRelationship(long baseEntityId, T nestedEntity);
+        void CreateRelationship(long baseEntityId, long nestedEntityId);
     }
 }

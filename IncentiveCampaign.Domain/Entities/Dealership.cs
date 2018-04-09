@@ -5,19 +5,25 @@ using System.Text;
 
 namespace IncentiveCampaign.Domain.Entities
 {
-    public class Dealership : IEntity
+    public class Dealership : Entity
     {
-        public long Id { get; set; }
+        public Dealership(
+            long id,
+            string name,
+            string cnpj,
+            bool agreementLetterSent) : base(id, name)
+        {
+            Cnpj = cnpj;
+            AgreementLetterSent = agreementLetterSent;            
+        }
 
-        public string Name { get; set; }
+        public string Cnpj { get; private set; }
 
-        public string Cnpj { get; set; }
-
-        public bool AgreementLetterSent { get; set; }       
+        public bool AgreementLetterSent { get; private set; }       
 
         public List<Dealer> Dealers { get; set; }
 
-        public bool IsValid()
+        public override bool IsValid()
         {
             throw new NotImplementedException();
         }

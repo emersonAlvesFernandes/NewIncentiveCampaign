@@ -4,7 +4,7 @@ using System.Text;
 
 namespace IncentiveCampaign.Domain.Contracts.Crud
 {
-    public interface INestedCrudService<T> where T : IEntity
+    public interface INestedCrudService<T> where T : Entity
     {        
         List<T> GetByBaseId(long baseId);
 

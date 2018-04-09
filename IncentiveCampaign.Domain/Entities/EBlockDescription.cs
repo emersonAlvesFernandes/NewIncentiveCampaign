@@ -9,6 +9,6 @@ namespace IncentiveCampaign.Domain.Entities
         AgreementLetterNotSent,
         CampaignNotAccepted,
         UserNotGranted,
-        NotApplicable
+        NonApplicable
     }
 }

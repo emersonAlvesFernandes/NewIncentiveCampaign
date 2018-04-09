@@ -16,31 +16,23 @@ namespace IncentiveCampaign.Domain.Services
             throw new NotImplementedException();
         }
 
-        public List<Dealership> Relate(List<Dealership> dealerships, long baseId, string username)
-        {
-            //  Checar se concessionária há dealers com 
-            //  pontos
+        public List<Dealership> Relate(List<Dealership> dealerships, long campaignId, string username)
+        {            
+            this.DeleteAllRelationships(dealerships, campaignId);
 
-            this.DeleteAllRelationships(dealerships, baseId);
-            this.CreateRelationship(dealerships, baseId);
+            this.CreateRelationship(dealerships, campaignId);
 
-            return null;
+            return dealerships;
         }
 
-        public void DeleteAllRelationships(List<Dealership> dealerships, long baseId)
-        {
-            foreach (var d in dealerships)
-            {
-                _repository.DeleteRelationship(baseId, d.Id);
-            }
+        public void DeleteAllRelationships(List<Dealership> dealerships, long campaignId)
+        {            
+            dealerships.ForEach(d => _repository.DeleteRelationship(campaignId));
         }
 
         private void CreateRelationship(List<Dealership> dealerships, long baseId)
         {
-            foreach (var dealership in dealerships)
-            {
-                _repository.CreateRelationship(baseId, dealership);
-            }
+            dealerships.ForEach( d => _repository.CreateRelationship(baseId, d.Id));            
         }
 
         public void SendAgreementLetter(long dealershipId, string username)

@@ -4,9 +4,9 @@ using System.Text;
 
 namespace IncentiveCampaign.Domain.Contracts.Crud
 {
-    public interface IBaseCrud<T> where T : IEntity
+    public interface IBaseCrud<T> where T : Entity
     {
-        T GetAll();
+        List<T> GetAll();
 
         T GetById(long id);
 

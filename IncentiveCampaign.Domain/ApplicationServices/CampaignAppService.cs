@@ -1,9 +1,11 @@
 ﻿using IncentiveCampaign.Domain.Contracts.ApplicationService;
+using IncentiveCampaign.Domain.Contracts.Notification;
 using IncentiveCampaign.Domain.Contracts.Service;
 using IncentiveCampaign.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Transactions;
 
 namespace IncentiveCampaign.Domain.ApplicationServices
 {
@@ -11,21 +13,38 @@ namespace IncentiveCampaign.Domain.ApplicationServices
     {
         private readonly ICampaignService _campaignService;
         private readonly IDealershipService _dealership;
+        private readonly INotificationService _notification;
+
+        public CampaignAppService()
+        {
+
+        }
+
+        public CampaignAppService(ICampaignService campaignService, IDealershipService dealership, INotificationService notification)
+        {
+            _campaignService = campaignService;
+            _dealership = dealership;
+            _notification = notification;
+        }
 
         public Campaign Create(Campaign baseEntity, string username)
         {
-            var campaign = _campaignService.Create(baseEntity, username);
-            var dealerships = _dealership.Relate(baseEntity.Dealerships, campaign.Id, username);
+            using (var transaction = new TransactionScope())
+            {
+                var campaign = _campaignService.Create(baseEntity, username);
 
-            campaign.Dealerships = dealerships;
+                var dealerships = _dealership.Relate(baseEntity.Dealerships, campaign.Id, username);
+                campaign.Dealerships = dealerships;
 
-            return campaign;
+                transaction.Complete();
+                return campaign;
+            }
         }
-
-        public Campaign GetAll()
+        
+        public List<Campaign> GetAll()
         {
-            var campaigns = _campaignService.GetAll();            
-
+            var campaigns = _campaignService.GetAll();         
+            
             return campaigns;
         }
 
@@ -48,6 +67,11 @@ namespace IncentiveCampaign.Domain.ApplicationServices
             campaign.Dealerships = _dealership.Relate(baseEntity.Dealerships, baseEntity.Id, username);
 
             return campaign;
+        }
+
+        public void CreateNotification(long campaignId)
+        {
+            _notification.NotificateAllDealersFromCampaign(campaignId);
         }
     }
 }

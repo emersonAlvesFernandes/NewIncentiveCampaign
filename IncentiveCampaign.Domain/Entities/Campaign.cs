@@ -5,27 +5,45 @@ using System.Text;
 
 namespace IncentiveCampaign.Domain.Entities
 {
-    public class Campaign : IEntity
-    {
-        public long Id { get; set; }
+    public class Campaign : Entity
+    {        
+        public Campaign(
+            long id,
+            string name,
+            DateTime startDate, 
+            DateTime endDate, 
+            bool isActive, 
+            DateTime creationDate, 
+            string userName, 
+            bool agreementLetterRequired, 
+            string termUrl) : base(id, name)
+        {
+            StartDate = startDate;
+            EndDate = endDate;
+            IsActive = isActive;
+            CreationDate = creationDate;
+            UserName = userName;
+            AgreementLetterRequired = agreementLetterRequired;
+            TermUrl = termUrl;
+        }
 
-        public string Name { get; set; }
+        public DateTime StartDate { get; private set; }
 
-        public DateTime StartDate { get; set; }
+        public DateTime EndDate { get; private set; }
 
-        public DateTime EndDate { get; set; }
+        public bool IsActive { get; private set; }
 
-        public bool IsActive { get; set; }
+        public DateTime CreationDate { get; private set; }
 
-        public DateTime CreationDate { get; set; }
+        public string UserName { get; private set; }
 
-        public string UserName { get; set; }
+        public bool AgreementLetterRequired { get; private set; }
 
-        public bool AgreementLetterRequired { get; set; }
+        public string TermUrl { get; private set; }
 
         public List<Dealership> Dealerships { get; set; }
 
-        public bool IsValid()
+        public override bool IsValid()
         {
             throw new NotImplementedException();
         }

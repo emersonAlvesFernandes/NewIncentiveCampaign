@@ -21,11 +21,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AgreementLetterContext", "A
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IncentiveCampaign.ALDomainContext", "IncentiveCampaign.ALDomainContext\IncentiveCampaign.ALDomainContext.csproj", "{9D573476-78E9-4DDB-8FD2-2A09FDED4566}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IncentiveCampaign.SqlRepository", "IncentiveCampaign.Repository\IncentiveCampaign.SqlRepository.csproj", "{029DC9B0-3DD2-41B9-AD96-81C0C214135C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IncentiveCampaign.SqlRepository", "IncentiveCampaign.Repository\IncentiveCampaign.SqlRepository.csproj", "{029DC9B0-3DD2-41B9-AD96-81C0C214135C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Utils", "Utils", "{60C69D5F-3CC5-449F-AF1E-E5D94C630FBC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IncentiveCampaign.Utils", "IncentiveCampaign.Utils\IncentiveCampaign.Utils.csproj", "{E8BAB7FB-43EC-41E5-8D4B-6DF3D5F7D37A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IncentiveCampaign.Utils", "IncentiveCampaign.Utils\IncentiveCampaign.Utils.csproj", "{E8BAB7FB-43EC-41E5-8D4B-6DF3D5F7D37A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IncentiveCampaign.DapperSqlRepository", "IncentiveCampaign.DapperSqlRepository\IncentiveCampaign.DapperSqlRepository.csproj", "{1E6C77F7-5DA5-4EB2-AD31-7552AF0F443F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IncentiveCampaign.Api", "IncentiveCampaign.Api\IncentiveCampaign.Api.csproj", "{3FFFABC7-8ADB-4C17-BB77-9F69EBAE3F77}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2.1 - ViewModel", "2.1 - ViewModel", "{8024FFA3-1B1D-4B74-B036-1C840866E44C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IncentiveCampaign.ViewModel", "IncentiveCampaign.ViewModel\IncentiveCampaign.ViewModel.csproj", "{22CE384A-B8A0-4D7B-9A95-B0133ABCABB1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -49,6 +57,18 @@ Global
 		{E8BAB7FB-43EC-41E5-8D4B-6DF3D5F7D37A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E8BAB7FB-43EC-41E5-8D4B-6DF3D5F7D37A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E8BAB7FB-43EC-41E5-8D4B-6DF3D5F7D37A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E6C77F7-5DA5-4EB2-AD31-7552AF0F443F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E6C77F7-5DA5-4EB2-AD31-7552AF0F443F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E6C77F7-5DA5-4EB2-AD31-7552AF0F443F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E6C77F7-5DA5-4EB2-AD31-7552AF0F443F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3FFFABC7-8ADB-4C17-BB77-9F69EBAE3F77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FFFABC7-8ADB-4C17-BB77-9F69EBAE3F77}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3FFFABC7-8ADB-4C17-BB77-9F69EBAE3F77}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3FFFABC7-8ADB-4C17-BB77-9F69EBAE3F77}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22CE384A-B8A0-4D7B-9A95-B0133ABCABB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22CE384A-B8A0-4D7B-9A95-B0133ABCABB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22CE384A-B8A0-4D7B-9A95-B0133ABCABB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22CE384A-B8A0-4D7B-9A95-B0133ABCABB1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -63,6 +83,9 @@ Global
 		{029DC9B0-3DD2-41B9-AD96-81C0C214135C} = {D761FEBC-C2F0-41A5-8B1D-698BA46965C2}
 		{60C69D5F-3CC5-449F-AF1E-E5D94C630FBC} = {A36BC67B-4A13-4A7D-8DA0-108A820BA5A0}
 		{E8BAB7FB-43EC-41E5-8D4B-6DF3D5F7D37A} = {60C69D5F-3CC5-449F-AF1E-E5D94C630FBC}
+		{1E6C77F7-5DA5-4EB2-AD31-7552AF0F443F} = {D761FEBC-C2F0-41A5-8B1D-698BA46965C2}
+		{3FFFABC7-8ADB-4C17-BB77-9F69EBAE3F77} = {6B8B3733-B67F-4A62-B835-BE41BA3DB48A}
+		{22CE384A-B8A0-4D7B-9A95-B0133ABCABB1} = {8024FFA3-1B1D-4B74-B036-1C840866E44C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A5B99A27-9A28-431C-93CA-30A83EA4C48C}

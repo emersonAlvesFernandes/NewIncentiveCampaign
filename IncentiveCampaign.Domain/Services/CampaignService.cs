@@ -21,7 +21,7 @@ namespace IncentiveCampaign.Domain.Services
             return _repository.Create(baseEntity, username);
         }
 
-        public Campaign GetAll()
+        public List<Campaign> GetAll()
         {
             return _repository.GetAll();
         }
