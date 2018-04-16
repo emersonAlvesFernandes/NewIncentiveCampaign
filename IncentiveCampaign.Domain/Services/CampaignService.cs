@@ -1,9 +1,7 @@
 ﻿using IncentiveCampaign.Domain.Contracts.Repository;
 using IncentiveCampaign.Domain.Contracts.Service;
 using IncentiveCampaign.Domain.Entities;
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace IncentiveCampaign.Domain.Services
 {
